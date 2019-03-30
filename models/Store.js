@@ -26,12 +26,11 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Store.associate = function (db) {
-        db.Store.hasMany(db.Product, {
-            foreignKey: "store_id",
-            sourceKey: "id"
-        });
-        //  models.store.belongsTo(models.user, { foreignKey: "user_id", targetKey: "id" });
-        //  models.store.hasMany(models.product, { foreignKey: "store_id", sourceKey: "id" });
+        // db.Store.hasMany(db.Product, {
+        //     foreignKey: "store_id",
+        //     sourceKey: "id"
+        // });
+        db.Store.hasMany(db.Product);
     }
 
     return Store;

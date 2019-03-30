@@ -17,23 +17,21 @@ if (config.use_env_variable) {
 fs
   .readdirSync(__dirname)
   .filter(function (file) {
-    console.log(file, " << ==============")
-
+    //console.log(file, " << ==============")
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-
   })
   .forEach(function (file) {
     var model = sequelize['import'](path.join(__dirname, file));
     // console.log(path.parse(file).name,  " << ==============")
-    console.log(path.parse(file).name, model)
+    //console.log(path.parse(file).name, model)
     db[path.parse(file).name] = model;
   });
 
 
 Object.keys(db).forEach(function (modelName) {
-  console.log(modelName, db[modelName].associate)
+  //console.log(modelName, db[modelName].associate)
   if (db[modelName].associate) {
-    console.log(modelName, db)
+    //console.log(modelName, db)
     db[modelName].associate(db);
   }
 });

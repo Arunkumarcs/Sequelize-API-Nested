@@ -27,10 +27,9 @@ router.get("/", async function (req, res, next) {
             price: "121212"
         }).then(product => {
             // console.log(product)
-            return models.Store.findOne({
-                where: {
-                    id: '1'
-                }
+            return models.Store.create({
+                name: "Saravana",
+                slog: "New Store"
             }).then(store => {
                 // console.log(store)
                 return user.addProduct(product).then(() => {
