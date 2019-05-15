@@ -9,10 +9,17 @@ var isEmail = require("sane-email-validation");
 import models from '../models/index';
 
 /* ===========================================Header Complete============================================== */
-
+router.get("/", function (req, res, next) {
+    res.json({
+        hello: "Hii",
+        status: 2005
+    })
+    res.end();
+    return false;
+})
 
 /* GET home page. */
-router.get("/", async function (req, res, next) {
+router.get("/create", async function (req, res, next) {
     await models.User.create({
         username: "NewDon",
         email: "my@gamil.com",
